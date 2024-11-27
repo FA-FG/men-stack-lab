@@ -1,0 +1,35 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <h1><%= animal.name %></h1>
+
+  <% if (animal.isDangerous) { %>
+  <h2 >This animal is dangerous!</h2>
+  <% } else { %>
+  <h2 >This animal is not dangerous!</h2>
+  <% } %>
+  <div class="animal-details">
+    <div class="animal-actions">
+      <form
+        class="delete-form"
+        action="/animals/<%=animal._id%>?_method=DELETE"
+        method="POST"
+      >
+        <button class="delete-button" type="submit">
+          Delete <%= animal.name %>
+        </button>
+      </form>
+      <a class="edit-link" href="/animals/<%= animal._id %>/edit">
+        <div class="edit-text">Edit <%= animal.name %></div></a
+      >
+    </div>
+  </div>
+  <a class="animals-index-link" href="/animals">
+    <div class="index-link-text">Back to animals</div>
+  </a>
+</body>

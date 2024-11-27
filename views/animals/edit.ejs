@@ -1,0 +1,31 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <h1>Edit <%= animal.name %></h1>
+
+  <form action="/animals/<%=animal._id%>?_method=PUT" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= animal.name %>" />
+
+    <br />
+
+    <div class="checkbox-div">
+      <label for="isDangerous">Is it dangerous?</label>
+      <input type="checkbox" name="isDangerous" id="isDangerous" <%if(animal.isDangerous){%>
+      checked 
+    <% }%> />
+    </div>
+
+    <br />
+
+    <button type="submit">Update Animal</button>
+  </form>
+
+  <a class="animals-index-link" href="/animals">
+    <div class="index-link-text">Back to Animals</div>
+  </a>
+</body>

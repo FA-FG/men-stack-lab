@@ -1,0 +1,30 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- adding css stylesheet -->
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <h1>All Animals are listed here </h1>
+  <img
+    class="animal-pic1"
+    src="https://static.vecteezy.com/system/resources/thumbnails/014/529/766/small/cute-penguin-cute-animal-3d-rendering-illustration-png.png"
+    alt="Happy pinguin"
+  />
+  <br />
+
+  <a class="add-animal" href="/animals/new">Add New Animal</a>
+
+
+  <div id="cards-div">
+  <ul>
+    <% animals.forEach(animal => { %>
+    <a class="animal-cards" href="/animals/<%= animal.id %>">
+      <li><%= animal.name %></li>
+    </a>
+    <% }); %>
+  </ul>
+</div>
+</body>
